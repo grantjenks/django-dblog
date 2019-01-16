@@ -27,7 +27,7 @@ setup(
     author_email='contact@grantjenks.com',
     url='http://www.grantjenks.com/docs/django-dblog/',
     license='Apache 2.0',
-    packages=['dblog'],
+    packages=find_packages(exclude=('docs', 'tests')),
     tests_require=['tox'],
     cmdclass={'test': Tox},
     classifiers=(
