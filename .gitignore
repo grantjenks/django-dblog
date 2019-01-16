@@ -1,0 +1,20 @@
+# Python byte-code
+*.py[co]
+
+# Anything under a bin directory
+bin/
+
+# Anything under a virutalenv directory
+/env*/
+
+# Coverage files.
+.coverage
+
+# Test, build, and deployment directories.
+/.cache/
+/.tox/
+/build/
+/dist/
+/django_dblog.egg-info/
+
+.DS_Store
