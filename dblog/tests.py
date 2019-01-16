@@ -1,7 +1,8 @@
 import logging
-import pytest
 
 from django.utils import timezone
+
+import pytest
 
 from .models import Record
 
@@ -14,7 +15,7 @@ def test_record():
         level_name='INFO',
         function='test_record',
         module='tests',
-        file_path='dblog/tests.py',
+        path='dblog/tests.py',
         line=0,
         logger='test',
         process=123,
