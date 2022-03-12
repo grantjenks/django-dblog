@@ -1,5 +1,4 @@
 """Django Database Log
-
 """
 
 from .handlers import DBLogHandler

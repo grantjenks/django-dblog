@@ -18,4 +18,5 @@ class RecordAdmin(admin.ModelAdmin):
 
     list_message.short_description = 'Message'
 
+
 admin.site.register(Record, RecordAdmin)
