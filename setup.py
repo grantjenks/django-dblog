@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 from setuptools.command.test import test as TestCommand
 
 import dblog
@@ -11,6 +11,7 @@ class Tox(TestCommand):
         self.test_suite = True
     def run_tests(self):
         import tox
+
         errno = tox.cmdline(self.test_args)
         exit(errno)
 
@@ -25,11 +26,19 @@ setup(
     long_description=readme,
     author='Grant Jenks',
     author_email='contact@grantjenks.com',
-    url='http://www.grantjenks.com/docs/django-dblog/',
+    url='https://grantjenks.com/docs/django-dblog/',
+    project_urls={
+        'Documentation': 'https://grantjenks.com/docs/django-dblog/',
+        'Funding': 'https://gum.co/django-dblog',
+        'Source': 'https://github.com/grantjenks/django-dblog',
+        'Tracker': 'https://github.com/grantjenks/django-dblog/issues',
+    },
     license='Apache 2.0',
-    packages=find_packages(exclude=('docs', 'tests')),
+    packages=['dblog'],
     tests_require=['tox'],
     cmdclass={'test': Tox},
+    python_requires='>=3',
+    install_requires=['Django'],
     classifiers=(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -37,7 +46,5 @@ setup(
         'Natural Language :: English',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: Implementation :: CPython',
     ),
 )
