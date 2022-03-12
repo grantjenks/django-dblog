@@ -1,12 +1,13 @@
 import logging
-import pytest
 
-from dblog.admin import IntPlus
-from dblog.models import Record
+import pytest
 from django.contrib.auth.models import User
 from django.core.management import call_command
 from django.test import Client
 from django.utils import timezone
+
+from dblog.admin import IntPlus
+from dblog.models import Record
 
 dblog = logging.getLogger('dblog.' + __name__)
 
