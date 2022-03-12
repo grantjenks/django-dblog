@@ -25,7 +25,7 @@ class LimitCountPaginator(Paginator):
             # count objects as quickly as possible. (Shouldn't
             # SQL optimize the query regardless of ordering?)
             return total if total < limit else IntPlus(total)
-        except (AttributeError, TypeError):
+        except (AttributeError, TypeError):  # pragma: no cover
             # AttributeError if object_list has no count() method.
             # TypeError if object_list.count() requires arguments
             # (i.e. is of type list).
