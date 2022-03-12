@@ -13,9 +13,11 @@ Installing Django Database Logs is simple with `pip
 
     $ pip install django-dblog
 
-Settings example:
+Changes to ``settings.py`` example:
 
 .. code::
+
+   INSTALLED_APPS += ['dblog']
 
    LOGGING = {
        'version': 1,
@@ -26,13 +28,23 @@ Settings example:
            },
        },
        'loggers': {
-           'test': {
+           'dblog': {
                'handlers': ['dblog'],
                'level': 'DEBUG',
                'propagate': False,
            },
        },
    }
+
+Using the logger, example:
+
+.. code::
+
+   import logging
+
+   dblog = logging.getLogger('dblog.' + __name__)
+
+   dblog.info('This message will go in the dblog Record table.')
 
 
 Reference and Indices
