@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from dblog.models import Record
 
+
 class RecordAdmin(admin.ModelAdmin):
     list_display = [
         'create_time',

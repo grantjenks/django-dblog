@@ -4,7 +4,6 @@
 
 from .handlers import DBLogHandler
 
-
 __title__ = 'dblog'
 __version__ = '0.2.1'
 __build__ = 0x000201

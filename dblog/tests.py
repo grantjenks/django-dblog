@@ -1,10 +1,10 @@
 import logging
 
+import pytest
 from django.utils import timezone
 
-import pytest
-
 from .models import Record
+
 
 @pytest.mark.django_db
 def test_record():
