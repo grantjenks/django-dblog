@@ -1,7 +1,8 @@
+import pathlib
+import re
+
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
-
-import dblog
 
 
 class Tox(TestCommand):
@@ -19,9 +20,14 @@ class Tox(TestCommand):
 with open('README.rst') as reader:
     readme = reader.read()
 
+dblog_init_path = pathlib.Path(__file__).parent / 'dblog' / '__init__.py'
+dblog_init = dblog_init_path.read_text()
+match = re.search(r"^__version__ = '(.+)'$", dblog_init, re.MULTILINE)
+version = match.group(1)
+
 setup(
     name='django-dblog',
-    version=dblog.__version__,
+    version=version,
     description='Django Database Logs',
     long_description=readme,
     author='Grant Jenks',
