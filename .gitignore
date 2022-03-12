@@ -16,5 +16,6 @@ bin/
 /build/
 /dist/
 /django_dblog.egg-info/
+/docs/_build/
 
 .DS_Store
